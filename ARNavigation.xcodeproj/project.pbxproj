@@ -10,6 +10,13 @@
 		A77EB11C1F98056E004E0161 /* ARNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77EB1121F98056E004E0161 /* ARNavigation.framework */; };
 		A77EB1211F98056E004E0161 /* ARNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB1201F98056E004E0161 /* ARNavigationTests.swift */; };
 		A77EB1231F98056E004E0161 /* ARNavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = A77EB1151F98056E004E0161 /* ARNavigation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A77EB12F1F9805A5004E0161 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB12C1F9805A5004E0161 /* Double+Extension.swift */; };
+		A77EB1301F9805A5004E0161 /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB12D1F9805A5004E0161 /* CLLocation+Extension.swift */; };
+		A77EB1311F9805A5004E0161 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB12E1F9805A5004E0161 /* CLLocationCoordinate2D+Extension.swift */; };
+		A77EB1361F9805AB004E0161 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB1321F9805AB004E0161 /* LocationService.swift */; };
+		A77EB1371F9805AB004E0161 /* MatrixHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB1331F9805AB004E0161 /* MatrixHelper.swift */; };
+		A77EB1381F9805AB004E0161 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB1341F9805AB004E0161 /* NavigationService.swift */; };
+		A77EB1391F9805AB004E0161 /* SCNVector3+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB1351F9805AB004E0161 /* SCNVector3+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,13 @@
 		A77EB11B1F98056E004E0161 /* ARNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARNavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77EB1201F98056E004E0161 /* ARNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNavigationTests.swift; sourceTree = "<group>"; };
 		A77EB1221F98056E004E0161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A77EB12C1F9805A5004E0161 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		A77EB12D1F9805A5004E0161 /* CLLocation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
+		A77EB12E1F9805A5004E0161 /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
+		A77EB1321F9805AB004E0161 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		A77EB1331F9805AB004E0161 /* MatrixHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixHelper.swift; sourceTree = "<group>"; };
+		A77EB1341F9805AB004E0161 /* NavigationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
+		A77EB1351F9805AB004E0161 /* SCNVector3+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,13 @@
 		A77EB1141F98056E004E0161 /* ARNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				A77EB1321F9805AB004E0161 /* LocationService.swift */,
+				A77EB1331F9805AB004E0161 /* MatrixHelper.swift */,
+				A77EB1341F9805AB004E0161 /* NavigationService.swift */,
+				A77EB1351F9805AB004E0161 /* SCNVector3+Extension.swift */,
+				A77EB12D1F9805A5004E0161 /* CLLocation+Extension.swift */,
+				A77EB12E1F9805A5004E0161 /* CLLocationCoordinate2D+Extension.swift */,
+				A77EB12C1F9805A5004E0161 /* Double+Extension.swift */,
 				A77EB1151F98056E004E0161 /* ARNavigation.h */,
 				A77EB1161F98056E004E0161 /* Info.plist */,
 			);
@@ -148,6 +169,7 @@
 				TargetAttributes = {
 					A77EB1111F98056E004E0161 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					A77EB11A1F98056E004E0161 = {
@@ -196,6 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A77EB12F1F9805A5004E0161 /* Double+Extension.swift in Sources */,
+				A77EB1381F9805AB004E0161 /* NavigationService.swift in Sources */,
+				A77EB1391F9805AB004E0161 /* SCNVector3+Extension.swift in Sources */,
+				A77EB1301F9805A5004E0161 /* CLLocation+Extension.swift in Sources */,
+				A77EB1361F9805AB004E0161 /* LocationService.swift in Sources */,
+				A77EB1311F9805A5004E0161 /* CLLocationCoordinate2D+Extension.swift in Sources */,
+				A77EB1371F9805AB004E0161 /* MatrixHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +363,7 @@
 		A77EB1271F98056E004E0161 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.froleeyo.ARNavigation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +386,7 @@
 		A77EB1281F98056E004E0161 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +408,7 @@
 		A77EB12A1F98056E004E0161 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SZP4Q326F;
 				INFOPLIST_FILE = ARNavigationTests/Info.plist;
@@ -390,6 +423,7 @@
 		A77EB12B1F98056E004E0161 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SZP4Q326F;
 				INFOPLIST_FILE = ARNavigationTests/Info.plist;
