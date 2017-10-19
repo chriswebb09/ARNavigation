@@ -1,8 +1,10 @@
 # ARNavigation
 
--ARKit
--MapKit
--CoreLocation
+- ARKit
+
+- MapKit
+
+- CoreLocation
 
 Use location and MapKit's navigation API to navigate in augmented reality. 
 
