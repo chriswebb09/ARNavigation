@@ -9,11 +9,11 @@
 import Foundation
 
 public struct LocationTranslation {
-    var latitudeTranslation: Double
-    var longitudeTranslation: Double
-    var altitudeTranslation: Double
+    public var latitudeTranslation: Double
+    public var longitudeTranslation: Double
+    public var altitudeTranslation: Double
     
-    init(latitudeTranslation: Double, longitudeTranslation: Double, altitudeTranslation: Double) {
+    public init(latitudeTranslation: Double, longitudeTranslation: Double, altitudeTranslation: Double) {
         self.latitudeTranslation = latitudeTranslation
         self.longitudeTranslation = longitudeTranslation
         self.altitudeTranslation = altitudeTranslation

@@ -36,3 +36,8 @@ public struct NavigationService {
     }
 }
 
+extension MKRouteStep {
+    public func getLocation() -> CLLocation {
+        return CLLocation(latitude: polyline.coordinate.latitude, longitude: polyline.coordinate.longitude)
+    }
+}

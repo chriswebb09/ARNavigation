@@ -10,6 +10,7 @@ import Foundation
 import SceneKit
 
 extension SCNVector3 {
+    
     public func distance(to vector: SCNVector3) -> Float {
         return sqrt(pow(vector.x - x, 2) + pow(vector.z - z, 2))
     }

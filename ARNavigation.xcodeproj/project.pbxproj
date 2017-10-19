@@ -10,6 +10,10 @@
 		A7025D4E1F98A3070059A05C /* LocationServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7025D4D1F98A3070059A05C /* LocationServiceDelegate.swift */; };
 		A7025D501F98A43C0059A05C /* LocationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7025D4F1F98A43C0059A05C /* LocationConstants.swift */; };
 		A7025D521F98A45B0059A05C /* LocationTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7025D511F98A45B0059A05C /* LocationTranslation.swift */; };
+		A752AB081F98AE6F00D82000 /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752AB071F98AE6F00D82000 /* BaseNode.swift */; };
+		A752AB0A1F98AEAB00D82000 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752AB091F98AEAB00D82000 /* Annotation.swift */; };
+		A752AB0C1F98B06000D82000 /* MappingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752AB0B1F98B06000D82000 /* MappingService.swift */; };
+		A752AB0E1F98B06B00D82000 /* AnnotationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752AB0D1F98B06B00D82000 /* AnnotationService.swift */; };
 		A77EB11C1F98056E004E0161 /* ARNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77EB1121F98056E004E0161 /* ARNavigation.framework */; };
 		A77EB1211F98056E004E0161 /* ARNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77EB1201F98056E004E0161 /* ARNavigationTests.swift */; };
 		A77EB1231F98056E004E0161 /* ARNavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = A77EB1151F98056E004E0161 /* ARNavigation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +40,10 @@
 		A7025D4D1F98A3070059A05C /* LocationServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceDelegate.swift; sourceTree = "<group>"; };
 		A7025D4F1F98A43C0059A05C /* LocationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConstants.swift; sourceTree = "<group>"; };
 		A7025D511F98A45B0059A05C /* LocationTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTranslation.swift; sourceTree = "<group>"; };
+		A752AB071F98AE6F00D82000 /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
+		A752AB091F98AEAB00D82000 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		A752AB0B1F98B06000D82000 /* MappingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingService.swift; sourceTree = "<group>"; };
+		A752AB0D1F98B06B00D82000 /* AnnotationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationService.swift; sourceTree = "<group>"; };
 		A77EB1121F98056E004E0161 /* ARNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77EB1151F98056E004E0161 /* ARNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARNavigation.h; sourceTree = "<group>"; };
 		A77EB1161F98056E004E0161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 				A77EB1161F98056E004E0161 /* Info.plist */,
 				A7025D4F1F98A43C0059A05C /* LocationConstants.swift */,
 				A7025D511F98A45B0059A05C /* LocationTranslation.swift */,
+				A752AB071F98AE6F00D82000 /* BaseNode.swift */,
+				A752AB091F98AEAB00D82000 /* Annotation.swift */,
+				A752AB0B1F98B06000D82000 /* MappingService.swift */,
+				A752AB0D1F98B06B00D82000 /* AnnotationService.swift */,
 			);
 			path = ARNavigation;
 			sourceTree = "<group>";
@@ -231,11 +243,15 @@
 				A77EB1381F9805AB004E0161 /* NavigationService.swift in Sources */,
 				A7025D521F98A45B0059A05C /* LocationTranslation.swift in Sources */,
 				A77EB1391F9805AB004E0161 /* SCNVector3+Extension.swift in Sources */,
+				A752AB0E1F98B06B00D82000 /* AnnotationService.swift in Sources */,
 				A7025D501F98A43C0059A05C /* LocationConstants.swift in Sources */,
 				A77EB1301F9805A5004E0161 /* CLLocation+Extension.swift in Sources */,
+				A752AB081F98AE6F00D82000 /* BaseNode.swift in Sources */,
 				A77EB1361F9805AB004E0161 /* LocationService.swift in Sources */,
 				A7025D4E1F98A3070059A05C /* LocationServiceDelegate.swift in Sources */,
 				A77EB1311F9805A5004E0161 /* CLLocationCoordinate2D+Extension.swift in Sources */,
+				A752AB0C1F98B06000D82000 /* MappingService.swift in Sources */,
+				A752AB0A1F98AEAB00D82000 /* Annotation.swift in Sources */,
 				A77EB1371F9805AB004E0161 /* MatrixHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
