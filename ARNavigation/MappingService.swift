@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import ARKit
 
-public class MappingService {
+open class MappingService {
     
     public var startingLocation: CLLocation!
     
@@ -31,6 +31,10 @@ public class MappingService {
     public var steps: [MKRouteStep] = []
     public var currentTripLegs: [[CLLocationCoordinate2D]] = []
     public var locations: [CLLocation] = []
+    
+    public init() {
+        
+    }
     
     public func setupNavigation() {
         

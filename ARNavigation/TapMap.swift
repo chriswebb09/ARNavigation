@@ -10,17 +10,26 @@ import MapKit
 
 open class TapMap: MKMapView {
     
-    public var press: UILongPressGestureRecognizer!
+    private var press: UILongPressGestureRecognizer!
     
     public var destinationLocation: CLLocationCoordinate2D!
     
-    public func setup() {
+    public init() {
+        super.init(frame: CGRect.zero)
+        setup()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+   private func setup() {
         press = UILongPressGestureRecognizer(target: self, action: #selector(handleMapTap(gesture:)))
         press.minimumPressDuration = 0.35
         addGestureRecognizer(press)
     }
     
-    @objc public func handleMapTap(gesture: UIGestureRecognizer) {
+    @objc private func handleMapTap(gesture: UIGestureRecognizer) {
         if gesture.state != UIGestureRecognizerState.began {
             return
         }
