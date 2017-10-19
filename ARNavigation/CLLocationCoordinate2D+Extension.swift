@@ -28,4 +28,41 @@ extension CLLocationCoordinate2D: Equatable {
         let radiansBearing = atan2(y, x)
         return radiansBearing
     }
+    
+    public func calculateDirection(to coordinate: CLLocationCoordinate2D) -> Double {
+        let a = sin(coordinate.longitude.toRadians() - longitude.toRadians()) * cos(coordinate.latitude.toRadians())
+        let dLat = cos(latitude.toRadians()) * sin(coordinate.latitude.toRadians()) - sin(latitude.toRadians())
+        let dLon = cos(coordinate.latitude.toRadians()) * cos(coordinate.longitude.toRadians() - longitude.toRadians())
+        let b =  dLat * dLon
+        return atan2(a, b)
+    }
+    
+    public func direction(to coordinate: CLLocationCoordinate2D) -> CLLocationDirection {
+        return self.calculateDirection(to: coordinate).toDegrees()
+    }
+    
+    public func coordinate(with bearing: Double, and distance: Double) -> CLLocationCoordinate2D {
+        let distRadiansLat = distance / LocationConstants.metersPerRadianLat  // earth radius in meters latitude
+        let distRadiansLong = distance / LocationConstants.metersPerRadianLon // earth radius in meters longitude
+        let lat1 = self.latitude.toRadians()
+        let lon1 = self.longitude.toRadians()
+        let lat2 = asin(sin(lat1) * cos(distRadiansLat) + cos(lat1) * sin(distRadiansLat) * cos(bearing))
+        let lon2 = lon1 + atan2(sin(bearing) * sin(distRadiansLong) * cos(lat1), cos(distRadiansLong) - sin(lat1) * sin(lat2))
+        return CLLocationCoordinate2D(latitude: lat2.toDegrees(), longitude: lon2.toDegrees())
+    }
+    
+    public static func getIntermediaryLocations(currentLocation: CLLocation, destinationLocation: CLLocation) -> [CLLocationCoordinate2D] {
+        var distances = [CLLocationCoordinate2D]()
+        let metersIntervalPerNode: Float = 10
+        var distance = Float(destinationLocation.distance(from: currentLocation))
+        let bearing = currentLocation.bearingToLocationRadian(destinationLocation)
+        while distance > 10 {
+            distance -= metersIntervalPerNode
+            let newLocation = currentLocation.coordinate.coordinate(with: Double(bearing), and: Double(distance))
+            if !distances.contains(newLocation) {
+                distances.append(newLocation)
+            }
+        }
+        return distances
+    }
 }
