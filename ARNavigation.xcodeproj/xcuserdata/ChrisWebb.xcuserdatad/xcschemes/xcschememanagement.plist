@@ -4,10 +4,23 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ARNavigation.xcscheme</key>
+		<key>ARNavigation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A77EB1111F98056E004E0161</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A77EB11A1F98056E004E0161</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
