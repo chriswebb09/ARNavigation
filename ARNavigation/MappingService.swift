@@ -11,28 +11,28 @@ import MapKit
 import CoreLocation
 import ARKit
 
-class MappingService {
+public class MappingService {
     
-    var startingLocation: CLLocation!
+    public var startingLocation: CLLocation!
     
-    var destinationLocation: CLLocationCoordinate2D! {
+    public var destinationLocation: CLLocationCoordinate2D! {
         didSet {
             setupNavigation()
         }
     }
     
-    private var annotationColor = UIColor.blue
+    public var annotationColor = UIColor.blue
     
-    var mapView: MKMapView!
-    internal var annotations: [Annotation] = []
+    public var mapView: MKMapView!
+    public var annotations: [Annotation] = []
     
-    var navigationService: NavigationService = NavigationService()
+    public var navigationService: NavigationService = NavigationService()
     
-    private var steps: [MKRouteStep] = []
-    private var currentTripLegs: [[CLLocationCoordinate2D]] = []
-    private var locations: [CLLocation] = []
+    public var steps: [MKRouteStep] = []
+    public var currentTripLegs: [[CLLocationCoordinate2D]] = []
+    public var locations: [CLLocation] = []
     
-    private func setupNavigation() {
+    public func setupNavigation() {
         
         let group = DispatchGroup()
         group.enter()
@@ -50,13 +50,14 @@ class MappingService {
             }
             
             // All steps must be added before moving to next step
+            
             group.wait()
             
             self.getLocationData()
         }
     }
     
-    private func getLocationData() {
+    public func getLocationData() {
         
         for (index, step) in steps.enumerated() {
             setTripLegFromStep(step, and: index)
@@ -71,7 +72,7 @@ class MappingService {
         addMapAnnotations()
     }
     
-    private func setTripLegFromStep(_ tripStep: MKRouteStep, and index: Int) {
+    public func setTripLegFromStep(_ tripStep: MKRouteStep, and index: Int) {
         if index > 0 {
             getTripLeg(for: index, and: tripStep)
         } else {
@@ -80,13 +81,13 @@ class MappingService {
     }
     
     
-    private func getInitialLeg(for tripStep: MKRouteStep) {
+    public func getInitialLeg(for tripStep: MKRouteStep) {
         let nextLocation = CLLocation(latitude: tripStep.polyline.coordinate.latitude, longitude: tripStep.polyline.coordinate.longitude)
         let intermediaries = CLLocationCoordinate2D.getIntermediaryLocations(currentLocation: startingLocation, destinationLocation: nextLocation)
         currentTripLegs.append(intermediaries)
     }
     
-    private func getTripLeg(for index: Int, and tripStep: MKRouteStep) {
+    public func getTripLeg(for index: Int, and tripStep: MKRouteStep) {
         let previousIndex = index - 1
         let previousStep = steps[previousIndex]
         let previousLocation = CLLocation(latitude: previousStep.polyline.coordinate.latitude, longitude: previousStep.polyline.coordinate.longitude)
@@ -95,14 +96,14 @@ class MappingService {
         currentTripLegs.append(intermediarySteps)
     }
     
-    private func update(intermediary locations: [CLLocationCoordinate2D]) {
+    public func update(intermediary locations: [CLLocationCoordinate2D]) {
         for intermediaryLocation in locations {
             annotations.append(Annotation(coordinate: intermediaryLocation, name: String(describing:intermediaryLocation)))
             self.locations.append(CLLocation(latitude: intermediaryLocation.latitude, longitude: intermediaryLocation.longitude))
         }
     }
     
-    private func showPointsOfInterestInMap(currentTripLegs: [[CLLocationCoordinate2D]]) {
+    public func showPointsOfInterestInMap(currentTripLegs: [[CLLocationCoordinate2D]]) {
         mapView.removeAnnotations(mapView.annotations)
         for tripLeg in currentTripLegs {
             for coordinate in tripLeg {
@@ -112,7 +113,7 @@ class MappingService {
         }
     }
     
-    func centerMapInInitialCoordinates() {
+    public func centerMapInInitialCoordinates() {
         if startingLocation != nil {
             DispatchQueue.main.async {
                 self.mapView.setCenter(self.startingLocation.coordinate, animated: true)
@@ -125,7 +126,7 @@ class MappingService {
         }
     }
     
-    private func addMapAnnotations() {
+    public func addMapAnnotations() {
         
         annotations.forEach { annotation in
             
