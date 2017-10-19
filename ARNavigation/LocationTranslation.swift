@@ -9,6 +9,7 @@
 import Foundation
 
 public struct LocationTranslation {
+    
     public var latitudeTranslation: Double
     public var longitudeTranslation: Double
     public var altitudeTranslation: Double
